@@ -27,4 +27,9 @@ class AppStyle {
       fontFamily: FontFamily.rubik,
       fontSize: 14.0,
       fontWeight: FontWeight.w400);
+  static const TextStyle f14_w400_h78746D = TextStyle(
+      color: AppColor.h78746D,
+      fontSize: 14.0,
+      fontFamily: FontFamily.rubik,
+      fontWeight: FontWeight.w400);
 }

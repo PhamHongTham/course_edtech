@@ -9,6 +9,98 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/back.svg
+  String get back => 'assets/icons/back.svg';
+
+  /// File path: assets/icons/course.svg
+  String get course => 'assets/icons/course.svg';
+
+  /// File path: assets/icons/email.svg
+  String get email => 'assets/icons/email.svg';
+
+  /// File path: assets/icons/eye.svg
+  String get eye => 'assets/icons/eye.svg';
+
+  /// File path: assets/icons/eye1.png
+  AssetGenImage get eye1 => const AssetGenImage('assets/icons/eye1.png');
+
+  /// File path: assets/icons/eye2.png
+  AssetGenImage get eye2 => const AssetGenImage('assets/icons/eye2.png');
+
+  /// File path: assets/icons/face.svg
+  String get face => 'assets/icons/face.svg';
+
+  /// File path: assets/icons/fb.png
+  AssetGenImage get fb => const AssetGenImage('assets/icons/fb.png');
+
+  /// File path: assets/icons/gg.png
+  AssetGenImage get ggPng => const AssetGenImage('assets/icons/gg.png');
+
+  /// File path: assets/icons/gg.svg
+  String get ggSvg => 'assets/icons/gg.svg';
+
+  /// File path: assets/icons/ig.png
+  AssetGenImage get igPng => const AssetGenImage('assets/icons/ig.png');
+
+  /// File path: assets/icons/ig.svg
+  String get igSvg => 'assets/icons/ig.svg';
+
+  /// File path: assets/icons/name.svg
+  String get name => 'assets/icons/name.svg';
+
+  /// File path: assets/icons/noteye.svg
+  String get noteye => 'assets/icons/noteye.svg';
+
+  /// File path: assets/icons/notif.svg
+  String get notif => 'assets/icons/notif.svg';
+
+  /// File path: assets/icons/notifi.svg
+  String get notifi => 'assets/icons/notifi.svg';
+
+  /// File path: assets/icons/pass.svg
+  String get pass => 'assets/icons/pass.svg';
+
+  /// File path: assets/icons/play.svg
+  String get play => 'assets/icons/play.svg';
+
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
+
+  /// File path: assets/icons/setting.svg
+  String get setting => 'assets/icons/setting.svg';
+
+  /// List of all assets
+  List<dynamic> get values => [
+        back,
+        course,
+        email,
+        eye,
+        eye1,
+        eye2,
+        face,
+        fb,
+        ggPng,
+        ggSvg,
+        igPng,
+        igSvg,
+        name,
+        noteye,
+        notif,
+        notifi,
+        pass,
+        play,
+        profile,
+        search,
+        setting
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -74,6 +166,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 

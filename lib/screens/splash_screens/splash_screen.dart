@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:course_edtech/gen/assets.gen.dart';
 import 'package:course_edtech/res/app_color.dart';
 import 'package:course_edtech/res/app_style.dart';

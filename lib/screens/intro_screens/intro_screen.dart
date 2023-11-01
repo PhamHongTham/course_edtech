@@ -22,14 +22,16 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   int current = 0;
   final pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColor.hFFFFFF,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17.0, vertical: 16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Align(
               alignment: Alignment.centerRight,
@@ -55,7 +57,7 @@ class _IntroScreenState extends State<IntroScreen> {
             //     },
             //   ),
             // ),
-            _pageImage(),
+            _pageImage(width: width, height: height),
             const SizedBox(height: 16.0),
             Text(
                 textAlign: TextAlign.center,
@@ -136,7 +138,7 @@ class _IntroScreenState extends State<IntroScreen> {
     );
   }
 
-  Widget _pageImage() {
+  Widget _pageImage({double? width, double? height}) {
     return Expanded(
       child: PageView.builder(
         controller: pageController,
@@ -149,7 +151,11 @@ class _IntroScreenState extends State<IntroScreen> {
         },
         itemCount: listIntroModels.length,
         itemBuilder: (context, index) {
-          return Image.asset(listIntroModels[index].image ?? '');
+          return Image.asset(
+            listIntroModels[index].image ?? '',
+            width: width,
+            height: 264 / 812 * height!,
+          );
         },
       ),
     );
