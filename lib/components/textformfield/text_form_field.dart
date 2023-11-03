@@ -11,18 +11,24 @@ class CustomFormInput extends StatelessWidget {
     this.textInputAction = TextInputAction.next,
     this.keyboardType = TextInputType.text,
     this.hintText,
+    this.errorText,
+    this.onChanged,
   }) : super(key: key);
   final TextEditingController? controller;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
   final String? hintText;
+  final String? errorText;
+  final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       controller: controller,
       textInputAction: textInputAction,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        errorText: errorText,
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: AppColor.h78746D),
           borderRadius: BorderRadius.circular(12.0),

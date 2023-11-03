@@ -2,6 +2,7 @@
 import 'package:course_edtech/gen/assets.gen.dart';
 import 'package:course_edtech/res/app_color.dart';
 import 'package:course_edtech/res/app_style.dart';
+import 'package:course_edtech/routers/app_routers.dart';
 import 'package:course_edtech/screens/intro_screens/intro_screen.dart';
 
 import 'package:flutter/material.dart';

@@ -1,19 +1,24 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:course_edtech/res/app_style.dart';
+import 'package:flutter/material.dart';
+
 import 'package:course_edtech/gen/fonts.gen.dart';
 import 'package:course_edtech/res/app_color.dart';
-import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    super.key,
+    Key? key,
     required this.onpressed,
     this.backgroundColor = AppColor.primaryColor,
     this.textColor = AppColor.hFFFFFF,
     required this.textButton,
-  });
+    this.textStyle = AppStyle.f16_w500_hFFFFFF,
+  }) : super(key: key);
   final Function() onpressed;
   final Color? backgroundColor;
   final Color? textColor;
   final String textButton;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +33,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           textButton,
           // textAlign: TextAlign.center,
-          style: TextStyle(
-              color: textColor,
-              fontFamily: FontFamily.rubik,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w500),
+          style: textStyle,
         ),
       ),
     );
