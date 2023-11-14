@@ -1,5 +1,9 @@
+import 'package:course_edtech/components/buttons/custom_button.dart';
+import 'package:course_edtech/components/tags/custom_tag.dart';
+import 'package:course_edtech/components/textformfield/search_form.dart';
 import 'package:course_edtech/components/textformfield/text_form_field.dart';
 import 'package:course_edtech/gen/assets.gen.dart';
+import 'package:course_edtech/models/category_model.dart';
 import 'package:course_edtech/res/app_color.dart';
 import 'package:course_edtech/res/app_style.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -46,28 +50,33 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12.0),
-                TextFormField(
-                  style: AppStyle.f14_w400_h78746D,
-                  decoration: InputDecoration(
-                    hintText: 'Search course',
-                    hintStyle: AppStyle.f14_w400_h78746D,
-                    suffixIcon: Image.asset(
-                      Assets.images.search.path,
-                      color: AppColor.h3C3A36,
+                const CustomSearch(
+                  hintText: 'Search course',
+                  hintStyle: AppStyle.f14_w400_h78746D,
+                ),
+                const SizedBox(height: 13.5),
+                Row(
+                  children: [
+                    Text(
+                      'Category: ',
+                      style: AppStyle.f14_w400_h3C3A36,
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: AppColor.h78746D),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    contentPadding: const EdgeInsetsDirectional.all(16.0),
-                    // border: OutlineInputBorder(
-                    //   borderRadius: BorderRadius.circular(12.0),
-                    // ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: AppColor.h78746D),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                    SizedBox(width: 16.0),
+                    ...List.generate(
+                      listcate.length,
+                      (index) {
+                        return Row(
+                          children: [
+                            Customtag(
+                              textSymbol: '#',
+                              textTitle: '${listcate[index].name}',
+                            ),
+                            SizedBox(width: 16.0),
+                          ],
+                        );
+                      },
+                    )
+                  ],
                 )
               ],
             ),
