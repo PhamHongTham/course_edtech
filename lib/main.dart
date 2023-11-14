@@ -1,3 +1,4 @@
+import 'package:course_edtech/screens/home_screen/home_screen.dart';
 import 'package:course_edtech/screens/intro_screens/intro_screen.dart';
 import 'package:course_edtech/screens/login_signup_forgot_password/login_screen.dart';
 import 'package:course_edtech/screens/login_signup_forgot_password/signup_screen.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignUpScreen(),
+      home: HomeScreen(),
     );
   }
 }

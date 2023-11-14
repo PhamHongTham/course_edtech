@@ -136,6 +136,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/saved.png
   AssetGenImage get saved => const AssetGenImage('assets/images/saved.png');
 
+  /// File path: assets/images/search.png
+  AssetGenImage get search => const AssetGenImage('assets/images/search.png');
+
   /// File path: assets/images/setting.png
   AssetGenImage get setting => const AssetGenImage('assets/images/setting.png');
 
@@ -157,6 +160,7 @@ class $AssetsImagesGen {
         payment,
         result,
         saved,
+        search,
         setting,
         signup,
         splash

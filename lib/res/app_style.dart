@@ -37,4 +37,14 @@ class AppStyle {
       fontSize: 16.0,
       fontFamily: FontFamily.rubik,
       fontWeight: FontWeight.w500);
+  static const TextStyle f16_w400_h3C3A36 = const TextStyle(
+      color: AppColor.h3C3A36,
+      fontFamily: FontFamily.rubik,
+      fontSize: 16.0,
+      fontWeight: FontWeight.w400);
+  static const TextStyle f32_w400_h3C3A36 = const TextStyle(
+      color: AppColor.h3C3A36,
+      fontFamily: FontFamily.rubik,
+      fontSize: 32.0,
+      fontWeight: FontWeight.w400);
 }

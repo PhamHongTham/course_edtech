@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:course_edtech/res/app_color.dart';
 import 'package:course_edtech/res/app_style.dart';
+import 'package:course_edtech/utils/validator.dart';
 
 class CustomPasswordInput extends StatefulWidget {
   const CustomPasswordInput({
@@ -11,11 +12,13 @@ class CustomPasswordInput extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.keyboardType = TextInputType.text,
     this.hintText,
+    this.validator,
   }) : super(key: key);
   final TextEditingController? controller;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
   final String? hintText;
+  final String? Function(String?)? validator;
 
   @override
   State<CustomPasswordInput> createState() => _CustomPasswordInputState();
@@ -25,39 +28,24 @@ class _CustomPasswordInputState extends State<CustomPasswordInput> {
   bool isCheck = true;
   bool isHiden = true;
   String? _errorPassword;
-  String? _errorConfirm;
   @override
   Widget build(BuildContext context) {
     print(isHiden);
     return TextFormField(
       onChanged: (value) {
-        // print(value);
-        // if (value.isEmpty) {
-        //   isHiden = true;
-        //   setState(() {});
-        // } else {
-        //   isHiden = false;
-        //   setState(() {});
-        // }
-        if (value.length < 8) {
-          isHiden = false;
-          _errorPassword = 'Sử dụng 8 ký tự trở lên cho mật khẩu của bạn';
-          setState(() {});
-        } else if (value.contains(RegExp(r'[a-z]')) ||
-            value.contains(RegExp(r'[!@#\$%^&*()]')) ||
-            value.contains(RegExp(r'[0-9]'))) {
-          _errorPassword =
-              'Vui lòng chọn mật khẩu mạnh hơn. \nHãy thử kết hợp giữa chữ cái, chữ số và ký hiệu';
-          isHiden = false;
-          setState(() {});
-        } else if (value.isEmpty) {
+        print(value);
+        if (value.isEmpty) {
           isHiden = true;
-          _errorPassword = null;
+          setState(() {});
+        } else {
+          isHiden = false;
           setState(() {});
         }
       },
       obscureText: isCheck,
+      validator: widget.validator,
       controller: widget.controller,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       textInputAction: widget.textInputAction,
       keyboardType: widget.keyboardType,
       decoration: InputDecoration(
